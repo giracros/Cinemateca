@@ -23,15 +23,20 @@ class actor {
 		
 		$registro = mysqli_num_rows ( $resultado );
 		
-		if ($registro == 0) {
+		try {
 			
-			include ("../Conexion/conexion.php");
-			
-			$resultado = mysqli_query ( $cnn, "insert into actor(codigoActor,nombre,estado) values ('$_codigoActor','$_nombre','a')" );
-			
-			echo "<script type='text/jscript'> alert('Registro almacenado'); history.back();history.go(-1);</script>";
-		} else
-			echo "<script type='text/javascript'> alert ('El registro ya existe'); history.back();</script>";
+			if ($registro == 0) {
+				
+				include ("../Conexion/conexion.php");
+				
+				$resultado = mysqli_query ( $cnn, "insert into actor(codigoActor,nombre,estado) values ('$_codigoActor','$_nombre','a')" );
+				
+				echo "<script type='text/jscript'> alert('Registro almacenado'); history.back();history.go(-1);</script>";
+			} else
+				echo "<script type='text/javascript'> alert ('El registro ya existe'); history.back();</script>";
+		} catch ( Exception $e ) {
+			echo "<script type='text/javascript'> alert ('Error'); history.back();</script>";
+		}
 	}
 	
 	/*
