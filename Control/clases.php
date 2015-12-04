@@ -1,73 +1,115 @@
 <?php
 
-// auxiliar
-class auxiliar {
-	var $cedula_auxiliar;
+/*
+ * Clase Actor
+ */
+class actor {
+	var $codigoActor;
 	var $nombre;
-	var $telefono;
 	var $estado;
-	function auxiliar($_cedula_auxiliar, $_nombre, $_telefono, $_estado) {
-		$this->cedula_auxiliar = $_cedula_auxiliar;
+	function actor($_codigoActor, $_nombre, $_estado) {
+		$this->codigoActor = $_codigoActor;
 		$this->nombre = $_nombre;
-		$this->telefono = $_telefono;
 		$this->estado = $_estado;
 	}
-	public static function insertar($_cedula_auxiliar, $_nombre, $_telefono) {
+	
+	/*
+	 * Metodo Insertar
+	 */
+	public static function insertar($_codigoActor, $_nombre) {
 		include ("../Conexion/conexion.php");
-		$resultado = mysqli_query ( $cnn, "select cedula_auxiliar from auxiliar where cedula_auxiliar = '$_cedula_auxiliar'" );
+		
+		$resultado = mysqli_query ( $cnn, "select codigoActor from actor where codigoActor = '$_codigoActor'" );
+		
 		$registro = mysqli_num_rows ( $resultado );
+		
 		if ($registro == 0) {
+			
 			include ("../Conexion/conexion.php");
-			$resultado = mysqli_query ( $cnn, "insert into auxiliar(cedula_auxiliar,nombre,telefono,estado) values ('$_cedula_auxiliar','$_nombre','$_telefono','activo')" );
+			
+			$resultado = mysqli_query ( $cnn, "insert into actor(codigoActor,nombre,estado) values ('$_codigoActor','$_nombre','a')" );
+			
 			echo "<script type='text/jscript'> alert('Registro almacenado'); history.back();history.go(-1);</script>";
 		} else
 			echo "<script type='text/javascript'> alert ('El registro ya existe'); history.back();</script>";
 	}
+	
+	/*
+	 * Metodo Listar
+	 */
 	public static function listar($opc, $campo, $valor) {
 		include ("../conexion/conexion.php");
+		
 		$mat = array ();
+		
 		if ($opc == 3)
-			$consulta = "select cedula_auxiliar,nombre,telefono,estado from auxiliar where estado = 'activo'";
+			
+			$consulta = "select codigoActor,nombre,estado from actor where estado = 'a'";
+		
 		if ($opc == 4) {
-			if ($campo == 'cedula_auxiliar')
-				$consulta = "select cedula_auxiliar,nombre,telefono,estado from auxiliar where $campo = '$valor' and estado = 'activo'";
+			
+			if ($campo == 'codigoActor')
+				
+				$consulta = "select codigoActor,nombre,estado from actor where $campo = '$valor' and estado = 'a'";
+			
 			else
-				$consulta = "select cedula_auxiliar,nombre,telefono,estado from auxiliar where $campo like '%$valor%' and estado = 'activo'";
+				
+				$consulta = "select codigoActor,nombre,estado from actor where $campo like '%$valor%' and estado = 'a'";
 		} else if ($opc == 5)
-			$consulta = "select cedula_auxiliar, nombre,telefono, estado from auxiliar where cedula_auxiliar= '$valor'";
+			
+			$consulta = "select codigoActor, nombre, estado from actor where codigoActor= '$valor'";
+		
 		$resultado = mysqli_query ( $cnn, $consulta );
+		
 		$registros = mysqli_num_rows ( $resultado );
+		
 		if ($registros == 0)
-			echo "<script type 'text/javascript'>alert('No existen auxiliares');history.back();</script>";
+			
+			echo "<script type 'text/javascript'>alert('No existen actores');history.back();</script>";
 		else {
 			for($i = 0; $i < $registros; $i ++) {
 				$datos = mysqli_fetch_array ( $resultado );
-				array_push ( $mat, auxiliar::mostrar ( $datos ) );
+				array_push ( $mat, actor::mostrar ( $datos ) );
 			}
 			return $mat;
 		}
 	}
+	
+	/*
+	 * Metodo Mostrar
+	 */
 	public static function mostrar($datos) {
-		$_cedula_auxiliar = $datos ["cedula_auxiliar"];
+		$_codigoActor = $datos ["codigoActor"];
 		$_nombre = $datos ["nombre"];
-		$_telefono = $datos ["telefono"];
 		$_estado = $datos ["estado"];
-		$auxiliar = new auxiliar ( $_cedula_auxiliar, $_nombre, $_telefono, $_estado );
-		return $auxiliar;
+		$actor = new actor ( $_codigoActor, $_nombre, $_estado );
+		return $actor;
 	}
+	
+	/*
+	 * Metodo Eliminar
+	 */
 	public static function eliminar($valor) {
 		include ("../Conexion/conexion.php");
-		$resultado = mysqli_query ( $cnn, "update auxiliar set estado='inactivo' where cedula_auxiliar='$valor'" );
+		
+		$resultado = mysqli_query ( $cnn, "update actor set estado='i' where codigoActor='$valor'" );
 		$registros = mysqli_affected_rows ( $cnn );
 		if ($registros == 0)
 			echo "<script type='text/javascript'> alert ('No se eliminó el registro'); history.go(-2);</script>";
 		else
 			echo "<script type = 'text/javascript'> alert ('Registro eliminado'); history.go(-2);</script>";
 	}
-	public static function modificar($_cedula_auxiliar, $_nombre, $_telefono) {
+	
+	/*
+	 * Metodo Modificar
+	 */
+	public static function modificar($_codigoActor, $_nombre) {
 		include ("../Conexion/conexion.php");
-		$resultado = mysqli_query ( $cnn, "update auxiliar set nombre='$_nombre',telefono='$_telefono' where cedula_auxiliar = '$_cedula_auxiliar'" );
+		
+		$resultado = mysqli_query ( $cnn, "update actor set nombre='$_nombre' where codigoActor = '$_codigoActor'" );
+		
 		$registros = mysqli_affected_rows ( $cnn );
+		
 		if ($registros == 0)
 			echo "<script type= 'text/javascript'> alert ('No se modificó el registro'); history.back();history.go(-2);</script>";
 		else

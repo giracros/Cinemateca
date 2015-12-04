@@ -27,6 +27,7 @@ if (isset ( $_GET ['action'] ))
 						</table></td>
 				</tr>
 				<script type="text/javascript">
+				
 			function disp<?php echo $row['idMenu'];?>()	{
 				if(document.getElementById("disp<?php echo $row['idMenu'];?>").style.display == "none")
 					document.getElementById("disp<?php echo $row['idMenu'];?>").style.display = "";
@@ -34,6 +35,8 @@ if (isset ( $_GET ['action'] ))
 					document.getElementById("disp<?php echo $row['idMenu'];?>").style.display = "none";
 			}
 		</script>
+		
+		
 				<tr>
 					<td valign="top"><div id="disp<?php echo $row['idMenu'];?>"
 							style="display: none">
