@@ -5,11 +5,11 @@ switch ($_REQUEST ["opc"]) {
 	
 	// Actor
 	case 2 :
-		$opc = $_REQUEST["opc"];
-		$codigoActor = $_POST["codigoActor"];
-		$nombre = $_POST["nombre"];
-		actor :: insertar ($codigoActor,$nombre);
-		exit();
+		$opc = $_REQUEST ["opc"];
+		$codigoActor = $_POST ["codigoActor"];
+		$nombre = $_POST ["nombre"];
+		actor::insertar ( $codigoActor, $nombre );
+		exit ();
 		break;
 	
 	case 3 :
@@ -41,7 +41,7 @@ switch ($_REQUEST ["opc"]) {
 		$opc = $_REQUEST ["opc"];
 		$codigoActor = $_POST ["codigoActor"];
 		$nombre = $_POST ["nombre"];
-		actor::modificar ( $codigoActor, $nombre);
+		actor::modificar ( $codigoActor, $nombre );
 		exit ();
 		break;
 	case 7 :

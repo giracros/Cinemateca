@@ -1,45 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
-</head>
+<title>Arquitectura</title>
+<link data-require="bootstrap@*" data-semver="3.3.6" rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-css@*" data-semver="3.3.6"
+	rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-glyphicons@*" data-semver="3.2.1"
+	rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/img/glyphicons-halflings.png" />
+<script data-require="bootstrap@*" data-semver="3.3.6"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script data-require="jquery@>=1.9.1 <3" data-semver="2.1.4"
+	src="https://code.jquery.com/jquery-2.1.4.js"></script>
 
+</head>
 <body>
-<form id="form1" name="form1" method="post" action="../control/procesos.php?opc=4">
-  <table width="500" border="1" align="center">
-    <tr>
-      <td colspan="2" align="center">Consulta de Actores</td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">Retornar</td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td width="247" align="right">Campo</td>
-      <td width="237" align="left">Valor</td>
-    </tr>
-    <tr>
-      <td align="right"><label for="campo"></label>
-        <select name="campo" id="campo">
-          <option value="codigoActor">Cedula</option>
-          <option value="nombre">Nombre</option>
-      </select></td>
-      <td><label for="valor"></label>
-      <input type="text" name="valor" id="valor" /></td>
-    </tr>
-    <tr>
-      <td colspan="2">&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><input type="submit" name="consultar" id="consultar" value="Consultar" /></td>
-    </tr>
-  </table>
-</form>
+	<form id="form1" name="form1" method="post"
+		action="../control/procesos.php?opc=4">
+		<table class="table table-striped">
+			<tr>
+				<td colspan="2" align="center">Consulta</td>
+			</tr>
+			<tr>
+				<td align="right"><label for="campo"></label> <select name="campo"
+					id="campo">
+						<option value="codigoActor">Codigo</option>
+						<option value="nombre">Nombre</option>
+				</select></td>
+				<td><label for="valor"></label> <input type="text" name="valor"
+					id="valor" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="consultar"
+					id="consultar" value="Consultar" /></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>

@@ -1,98 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Actor</title>
-<style type="text/css">
-
-#form1 table {
-	font-family: Arial, Helvetica, sans-serif;
-	float: center;
-}
-table {
-	font-size: 12px;
-	 float: center;
-}
-#form1 table {
-	font-size: 16px;
-	
-}
-#form1 table tr td {
-	color: #363;
-	font-size: 16px;
-	font-style: normal;
-	line-height: normal;
-	font-weight: bolder;
-	font-variant: normal;
-	text-transform: capitalize;
-	 float: center;
-}
-.boton
-        {
-          color: #FFFFFF;
-          background-color: #5B5B5B;
-          border: 1px solid;
-          cursor: pointer;
-		  
-        }
-
-        form
-        {
-          background-color: #F1F8F8;
-          width: 60%;
-          margin: 50px 0 0 50px;
-         padding: 0 0 30px 40px;
-    width: 500px;
-    border: 2px solid;
-    border-radius: 10px;
-    box-shadow: 7px 7px 7px #619561;
-    color: #15C8FF;
-    float: center;
-        }
-    
-
-</style>
+<title>Arquitectura</title>
+<link data-require="bootstrap@*" data-semver="3.3.6" rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-css@*" data-semver="3.3.6"
+	rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-glyphicons@*" data-semver="3.2.1"
+	rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/img/glyphicons-halflings.png" />
+<script data-require="bootstrap@*" data-semver="3.3.6"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script data-require="jquery@>=1.9.1 <3" data-semver="2.1.4"
+	src="https://code.jquery.com/jquery-2.1.4.js"></script>
 </head>
-
 <body>
 <?php foreach($procesoactor as $listaractor){?>
-<center>
-<form id="form1" name="form1" method="post" action="../Control/procesos.php?opc=6">
-  <table width="454" border="0">
-    <tr>
-      <td colspan="2" align="center"><h3>MODIFICAR ACTOR</h3></td>
-    </tr>
-    <tr>
-      <td width="110">&nbsp;</td>
-      <td width="345">&nbsp;</td>
-    </tr>
-    <tr>
-       <td colspan="2" align="center"><a href="../../Odontologia/Vista/menu.php">Retornar</a></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>Cedula:</td>
-      <td><input name="codigoActor" type="text" id="codigoActor" readonly="readonly" value="<?php echo $listaractor ->codigoActor;?>" size="30" maxlength="15" placeholder="Dig&iacute;te el codigo" required /></td>
-    </tr>
-    <tr>
-      <td>Nombre:</td>
-      <td><input name="nombre" type="text" id="nombre" value="<?php echo $listaractor ->nombre;?>" size="30" maxlength="40" placeholder="Dig&iacute;te el Nombre del cargo" required /></td>
-    </tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td colspan="2"><div align="center">
-         <button name="boton" type="submit" title="Guardar ACTOR"><img src="../../Odontologia/imagenes/Guardar.png" width="26"></button>   
-        <button name="boton2" type="reset" title="Limpiar ACTOR"><img src="../../Odontologia/imagenes/Limpiar.png" width="26"></button> 
-      </div></td>
-    </tr>
-  </table>
-</form>
+
+		<form id="form1" name="form1" method="post"
+			action="../Control/procesos.php?opc=6">
+			<table width="454" border="0">
+				<tr>
+					<td colspan="2" align="center"><h3>MODIFICAR</h3></td>
+				</tr>
+				<tr>
+					<td width="110">&nbsp;</td>
+					<td width="345">&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><a
+						href="../../Cinemateca/Vista/menu.php">Retornar</a></td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>Codigo:</td>
+					<td><input name="codigoActor" type="text" id="codigoActor"
+						readonly="readonly"
+						value="<?php echo $listaractor ->codigoActor;?>"
+						maxlength="4" placeholder="Codigo" required /></td>
+				</tr>
+				<tr>
+					<td>Nombre:</td>
+					<td><input name="nombre" type="text" id="nombre"
+						value="<?php echo $listaractor ->nombre;?>"
+						maxlength="50" placeholder="Nombre"
+						required /></td>
+				</tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan="2"><div align="center">
+							<button name="boton" type="submit">Guardar</button>
+							<button name="boton2" type="reset">Limpiar</button>
+						</div></td>
+				</tr>
+			</table>
+		</form>
 <?php } ?>
-</center>
 </body>
 </html>

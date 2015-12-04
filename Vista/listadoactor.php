@@ -1,43 +1,44 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Actor</title>
-
+<title>Arquitectura</title>
+<link data-require="bootstrap@*" data-semver="3.3.6" rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-css@*" data-semver="3.3.6"
+	rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+<link data-require="bootstrap-glyphicons@*" data-semver="3.2.1"
+	rel="stylesheet"
+	href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/img/glyphicons-halflings.png" />
+<script data-require="bootstrap@*" data-semver="3.3.6"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script data-require="jquery@>=1.9.1 <3" data-semver="2.1.4"
+	src="https://code.jquery.com/jquery-2.1.4.js"></script>
 </head>
 
 <body>
-	<div align="center">
-		<table width="500" border="1">
+
+	<div class="form-group">
+		<table class="table table-striped">
 			<tr>
-				<td colspan="6" align="center">Listado de Actores</td>
+				<td colspan="6" align="center">Listado</td>
 			</tr>
 			<tr>
-				<td colspan="6">&nbsp;</td>
-			</tr>
-			<tr>
-				<td colspan="6" align="center">Retornar</td>
-			</tr>
-			<tr>
-				<td colspan="6">&nbsp;</td>
-			</tr>
-			<tr>
-				<td width="81">Codigo Actor</td>
+				<td width="81">Codigo</td>
 				<td width="102">Nombre</td>
 				<td width="94">Estado</td>
-				<td colspan="2">Acción</td>
+				<td colspan="2">Accion</td>
 			</tr>
     <?php foreach($procesoactor as $listaractor){?>
     <tr>
 				<td>&nbsp;<?php echo $listaractor->codigoActor;?></td>
 				<td>&nbsp;<?php echo $listaractor->nombre;?></td>
 				<td>&nbsp;<?php echo $listaractor->estado;?></td>
+				
 				<td width="63" align="center">&nbsp;<a
-					href="../Control/procesos.php?opc=5&valor=<?php echo $listaractor->codigoActor;?>">
-					<img src="../Imagenes/Modificar.png" title="Modificar" width="26"></a></td>
-				<td width="52" align="center">&nbsp; <a
-					href="../control/procesos.php?opc=7;&valor=<?php echo $listaractor-> codigoActor;?>">
-						Eliminar </a></td>
+					href="../Control/procesos.php?opc=5&valor=<?php echo $listaractor->codigoActor;?>">Modificar</a></td>
+				<td width="52" align="center">&nbsp; <a 
+					href="../Control/procesos.php?opc=7&valor=<?php echo $listaractor->codigoActor;?>">Eliminar</a></td>
 			</tr>
     <?php }?>
   </table>

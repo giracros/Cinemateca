@@ -7,25 +7,22 @@ if (isset ( $_GET ['action'] ))
 <table width="426" height="51" border="0" align="center" cellpadding="0"
 	cellspacing="0" class="tablainterna">
 	<tr>
-		<td width="426"><table width="250" border="0" align="center"
-				cellpadding="0" cellspacing="0" class="tablainterna">
+		<td width="426"><table width="250" border="0" align="center" cellpadding="0" cellspacing="0" class="tablainterna">
         <?php
 								$consulta = "select idMenu, nombreMenu from menu order by nombreMenu";
 								$res = mysqli_query ( $cnn, $consulta );
 								if (! $res)
 									exit ( mysqli_error () );
 								while ( $row = mysqli_fetch_array ( $res ) ) {
-		?>
+									?>
         <tr>
-					<td height="10" valign="top"><table width="250" border="0"
-							align="center" cellpadding="0" cellspacing="5"
-							class="tablainterna">
+					<td height="10" valign="top"><table width="250" border="0" align="center" cellpadding="0" cellspacing="5" class="tablainterna">
 							<tr>
-								<td height="29" align="center" bgcolor="#C0DCC0"><a
-									href="javascript:disp<?php echo $row['idMenu'];?>()"><?php echo $row['nombreMenu'];?></a></td>
+								<td height="29" align="center" bgcolor="#5cb85c">
+								<a href="javascript:disp<?php echo $row['idMenu'];?>()"><?php echo $row['nombreMenu'];?></a></td>
 							</tr>
 						</table></td>
-				</tr>
+		</tr>
 				<script type="text/javascript">
 				
 			function disp<?php echo $row['idMenu'];?>()	{
@@ -35,8 +32,8 @@ if (isset ( $_GET ['action'] ))
 					document.getElementById("disp<?php echo $row['idMenu'];?>").style.display = "none";
 			}
 		</script>
-		
-		
+
+
 				<tr>
 					<td valign="top"><div id="disp<?php echo $row['idMenu'];?>"
 							style="display: none">
@@ -51,9 +48,9 @@ if (isset ( $_GET ['action'] ))
               <table width="250" border="0" cellpadding="0"
 								cellspacing="2" class="tablainterna">
 								<tr>
-									<td><img src="../imagenes/Dentista.png"></td>
-
-									<td><a href="<?php echo $row2['url'];?>"> <?php echo $row2['nombreSubmenu'];?></a></td>
+								<td>
+								<a href="<?php echo $row2['url'];?>"> <?php echo $row2['nombreSubmenu'];?></a>
+								</td>
 
 
 								</tr>
