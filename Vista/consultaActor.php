@@ -24,6 +24,10 @@
 				<td colspan="2" align="center">Consulta</td>
 			</tr>
 			<tr>
+				<td colspan="2" align="center"><a
+					href="../../Cinemateca/Vista/menu.php">Retornar</a></td>
+			</tr>
+			<tr>
 				<td align="right"><label for="campo"></label> <select name="campo"
 					id="campo">
 						<option value="codigoActor">Codigo</option>
@@ -36,8 +40,8 @@
 				<td colspan="2">&nbsp;</td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="consultar"
-					id="consultar" value="Consultar" /></td>
+				<td colspan="2" align="center"><input class="btn btn-primary"
+					type="submit" name="consultar" id="consultar" value="Consultar" /></td>
 			</tr>
 		</table>
 	</form>

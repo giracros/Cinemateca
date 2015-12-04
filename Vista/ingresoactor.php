@@ -24,6 +24,10 @@
 				<td colspan="2" align="center"><h3>ACTOR</h3></td>
 			</tr>
 			<tr>
+				<td colspan="2" align="center"><a
+					href="../../Cinemateca/Vista/menu.php">Retornar</a></td>
+			</tr>
+			<tr>
 				<td>&nbsp;</td>
 				<td>&nbsp;</td>
 			</tr>
@@ -42,8 +46,10 @@
 			</tr>
 			<tr>
 				<td colspan="2"><div align="center">
-						<button name="boton" type="submit" title="Guardar">Guardar</button>
-						<button name="boton2" type="reset" title="Limpiar">Limpiar</button>
+						<button class="btn btn-primary" name="boton" type="submit"
+							title="Guardar">Guardar</button>
+						<button class="btn btn-danger" name="boton2" type="reset"
+							title="Limpiar">Limpiar</button>
 					</div></td>
 			</tr>
 		</table>
