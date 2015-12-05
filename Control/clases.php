@@ -335,17 +335,19 @@ class ubicacion {
 	public static function listar($opc, $campo, $valor) {
 		include ("../Conexion/conexion.php");
 		$mat = array ();
-		if ($opc == 3)
+		if ($opc == 9)
 			$consulta = "select codigoUbicacion,nombre,estado from ubicacion where estado = 'a'";
-			if ($opc == 4) {
+			if ($opc == 10) {
 				if ($campo == 'codigoUbicacion')
 					$consulta = "select codigoUbicacion,nombre,estado from ubicacion where $campo = '$valor' and estado = 'a'";
 					else
 						$consulta = "select codigoUbicacion,nombre,estado from ubicacion where $campo like '%$valor%' and estado = 'a'";
-			} else if ($opc == 5)
+			} else if ($opc == 11)
+				
 				$consulta = "select codigoUbicacion, nombre, estado from ubicacion where codigoUbicacion= '$valor'";
 				$resultado = mysqli_query ( $cnn, $consulta );
 				$registros = mysqli_num_rows ( $resultado );
+				
 				if ($registros == 0)
 					echo "<script type 'text/javascript'>alert('No existen ubicaciones');history.back();</script>";
 					else {
