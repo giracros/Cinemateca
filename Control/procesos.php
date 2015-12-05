@@ -198,7 +198,7 @@ switch ($_REQUEST ["opc"]) {
 	// PeliculaActor
 	case 26 :
 		
-		$opcP = 36;
+		$opcP = 64;
 		$campoP = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
 		$valorP = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
 		$procesopelicula = pelicula::listar ( $opcP, $campoP, $valorP );
@@ -220,7 +220,7 @@ switch ($_REQUEST ["opc"]) {
 		break;
 	
 	case 62 :
-		$opc = 13; // Caso: listar ubicacion
+		$opc = 9; // Caso: listar ubicacion
 		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
 		$valor = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
 		$procesoubicacion = ubicacion::listar ( $opc, $campo, $valor );
