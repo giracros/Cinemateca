@@ -16,10 +16,10 @@
 	src="https://code.jquery.com/jquery-2.1.4.js"></script>
 </head>
 <body>
-<?php foreach($procesogenero as $listargenero){?>
+<?php foreach($procesoactor as $listaractor){?>
 
 		<form id="form1" name="form1" method="post"
-			action="../Control/procesos.php?opc=18">
+			action="../Control/procesos.php?opc=6">
 			<table width="454" border="0">
 				<tr>
 					<td colspan="2" align="center"><h3>MODIFICAR</h3></td>
@@ -38,15 +38,15 @@
 				</tr>
 				<tr>
 					<td>Codigo:</td>
-					<td><input name="codigoGenero" type="text" id="codigoGenero"
+					<td><input name="codigoActor" type="text" id="codigoActor"
 						readonly="readonly"
-						value="<?php echo $listargenero ->codigoGenero;?>"
+						value="<?php echo $listaractor ->codigoActor;?>"
 						maxlength="4" placeholder="Codigo" required /></td>
 				</tr>
 				<tr>
 					<td>Nombre:</td>
 					<td><input name="nombre" type="text" id="nombre"
-						value="<?php echo $listargenero ->nombre;?>"
+						value="<?php echo $listaractor ->nombre;?>"
 						maxlength="50" placeholder="Nombre"
 						required /></td>
 				</tr>

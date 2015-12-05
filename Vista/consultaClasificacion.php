@@ -18,39 +18,30 @@
 </head>
 <body>
 	<form id="form1" name="form1" method="post"
-		action="../../Cinemateca/Control/procesos.php?opc=14">
+		action="../control/procesos.php?opc=4">
 		<table class="table table-striped">
 			<tr>
-				<td colspan="2" align="center"><h3>GENERO</h3></td>
+				<td colspan="2" align="center">Consulta</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><a
 					href="../../Cinemateca/Vista/menu.php">Retornar</a></td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td align="right"><label for="campo"></label> <select name="campo"
+					id="campo">
+						<option value="codigoActor">Codigo</option>
+						<option value="nombre">Nombre</option>
+				</select></td>
+				<td><label for="valor"></label> <input type="text" name="valor"
+					id="valor" /></td>
 			</tr>
 			<tr>
-				<td>Cedula:</td>
-				<td><input name="codigoGenero" type="text" id="codigoGenero"
-					maxlength="4" placeholder="Codigo" required /></td>
+				<td colspan="2">&nbsp;</td>
 			</tr>
 			<tr>
-				<td>Nombre:</td>
-				<td><input name="nombre" type="text" id="nombre" maxlength="50"
-					placeholder="Nombre" required /></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td colspan="2"><div align="center">
-						<button class="btn btn-primary" name="boton" type="submit"
-							title="Guardar">Guardar</button>
-						<button class="btn btn-danger" name="boton2" type="reset"
-							title="Limpiar">Limpiar</button>
-					</div></td>
+				<td colspan="2" align="center"><input class="btn btn-primary"
+					type="submit" name="consultar" id="consultar" value="Consultar" /></td>
 			</tr>
 		</table>
 	</form>

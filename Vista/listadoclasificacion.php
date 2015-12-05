@@ -14,45 +14,38 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.js"></script>
 <script data-require="jquery@>=1.9.1 <3" data-semver="2.1.4"
 	src="https://code.jquery.com/jquery-2.1.4.js"></script>
-
 </head>
+
 <body>
-	<form id="form1" name="form1" method="post"
-		action="../../Cinemateca/Control/procesos.php?opc=14">
+
+	<div class="form-group">
 		<table class="table table-striped">
 			<tr>
-				<td colspan="2" align="center"><h3>GENERO</h3></td>
+				<td colspan="6" align="center">Listado</td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><a
 					href="../../Cinemateca/Vista/menu.php">Retornar</a></td>
 			</tr>
 			<tr>
-				<td>&nbsp;</td>
-				<td>&nbsp;</td>
+				<td width="81">Codigo</td>
+				<td width="102">Nombre</td>
+				<td width="94">Estado</td>
+				<td colspan="2">Accion</td>
 			</tr>
-			<tr>
-				<td>Cedula:</td>
-				<td><input name="codigoGenero" type="text" id="codigoGenero"
-					maxlength="4" placeholder="Codigo" required /></td>
+    <?php foreach($procesoactor as $listaractor){?>
+    <tr>
+				<td>&nbsp;<?php echo $listaractor->codigoActor;?></td>
+				<td>&nbsp;<?php echo $listaractor->nombre;?></td>
+				<td>&nbsp;<?php echo $listaractor->estado;?></td>
+
+				<td width="63" align="center">&nbsp;<a
+					href="../Control/procesos.php?opc=5&valor=<?php echo $listaractor->codigoActor;?>">Modificar</a></td>
+				<td width="52" align="center">&nbsp; <a
+					href="../Control/procesos.php?opc=7&valor=<?php echo $listaractor->codigoActor;?>">Eliminar</a></td>
 			</tr>
-			<tr>
-				<td>Nombre:</td>
-				<td><input name="nombre" type="text" id="nombre" maxlength="50"
-					placeholder="Nombre" required /></td>
-			</tr>
-			<tr>
-				<td>&nbsp;</td>
-			</tr>
-			<tr>
-				<td colspan="2"><div align="center">
-						<button class="btn btn-primary" name="boton" type="submit"
-							title="Guardar">Guardar</button>
-						<button class="btn btn-danger" name="boton2" type="reset"
-							title="Limpiar">Limpiar</button>
-					</div></td>
-			</tr>
-		</table>
-	</form>
+    <?php }?>
+  </table>
+	</div>
 </body>
 </html>
