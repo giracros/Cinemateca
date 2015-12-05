@@ -10,8 +10,8 @@ and open the template in the editor.
 <title>Hola Cesar</title>
 </head>
 <body>
-  
-  <?php include ("menu.php");	?>
-
-    </body>
+	<p>
+		<a href="../../Cinemateca/Vista/menu.php">Menu</a>
+	</p>
+</body>
 </html>

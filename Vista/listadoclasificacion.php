@@ -33,16 +33,16 @@
 				<td width="94">Estado</td>
 				<td colspan="2">Accion</td>
 			</tr>
-    <?php foreach($procesoactor as $listaractor){?>
+    <?php foreach($procesoclasificacion as $listarclasificacion){?>
     <tr>
-				<td>&nbsp;<?php echo $listaractor->codigoActor;?></td>
-				<td>&nbsp;<?php echo $listaractor->nombre;?></td>
-				<td>&nbsp;<?php echo $listaractor->estado;?></td>
+				<td>&nbsp;<?php echo $listarclasificacion->codigoClasificacion;?></td>
+				<td>&nbsp;<?php echo $listarclasificacion->nombre;?></td>
+				<td>&nbsp;<?php echo $listarclasificacion->estado;?></td>
 
 				<td width="63" align="center">&nbsp;<a
-					href="../Control/procesos.php?opc=5&valor=<?php echo $listaractor->codigoActor;?>">Modificar</a></td>
+					href="../Control/procesos.php?opc=23&valor=<?php echo $listarclasificacion->codigoClasificacion;?>">Modificar</a></td>
 				<td width="52" align="center">&nbsp; <a
-					href="../Control/procesos.php?opc=7&valor=<?php echo $listaractor->codigoActor;?>">Eliminar</a></td>
+					href="../Control/procesos.php?opc=25&valor=<?php echo $listarclasificacion->codigoClasificacion;?>">Eliminar</a></td>
 			</tr>
     <?php }?>
   </table>

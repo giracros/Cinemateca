@@ -18,10 +18,10 @@
 </head>
 <body>
 	<form id="form1" name="form1" method="post"
-		action="../../Cinemateca/Control/procesos.php?opc=2">
+		action="../../Cinemateca/Control/procesos.php?opc=20">
 		<table class="table table-striped">
 			<tr>
-				<td colspan="2" align="center"><h3>ACTOR</h3></td>
+				<td colspan="2" align="center"><h3>CLASIFICACION</h3></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="center"><a
@@ -32,9 +32,10 @@
 				<td>&nbsp;</td>
 			</tr>
 			<tr>
-				<td>Cedula:</td>
-				<td><input name="codigoActor" type="text" id="codigoActor"
-					maxlength="4" placeholder="Codigo" required /></td>
+				<td>Codigo:</td>
+				<td><input name="codigoClasificacion" type="text"
+					id="codigoClasificacion" maxlength="4" placeholder="Codigo"
+					required /></td>
 			</tr>
 			<tr>
 				<td>Nombre:</td>

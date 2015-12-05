@@ -18,7 +18,7 @@
 </head>
 <body>
 	<form id="form1" name="form1" method="post"
-		action="../control/procesos.php?opc=4">
+		action="../control/procesos.php?opc=22">
 		<table class="table table-striped">
 			<tr>
 				<td colspan="2" align="center">Consulta</td>
@@ -30,7 +30,7 @@
 			<tr>
 				<td align="right"><label for="campo"></label> <select name="campo"
 					id="campo">
-						<option value="codigoActor">Codigo</option>
+						<option value="codigoClasificacion">Codigo</option>
 						<option value="nombre">Nombre</option>
 				</select></td>
 				<td><label for="valor"></label> <input type="text" name="valor"
