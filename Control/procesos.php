@@ -195,57 +195,92 @@ switch ($_REQUEST ["opc"]) {
 		exit ();
 		break;
 	
-	// cita
-	case 82 :
-		$opcO = 74;
-		$campoO = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
-		$valorO = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
-		$procesoagendacita = agendacita::listar ( $opcO, $campoO, $valorO );
+	// PeliculaActor
+	case 26 :
 		
-		$opcL = 113;
+		$opcP = 36;
+		$campoP = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
+		$valorP = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
+		$procesopelicula = pelicula::listar ( $opcP, $campoP, $valorP );
 		
-		$campoL = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
-		$valorL = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
-		$procesopaciente = paciente::listar ( $opcL, $campoL, $valorL );
-		include ("../vista/ingresocita.php");
+		$opcA = 3;
+		$campoA = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
+		$valorA = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
+		$procesoactor = actor::listar ( $opcA, $campoA, $valorA );
+		
+		include ("../vista/ingresopeliculaactor.php");
 		exit ();
-		
 		break;
-	case 83 :
-		$cod_cita = $_POST ["cod_cita"];
-		$cod_agendacita = $_POST ["cod_agendacita"];
-		$identificacion = $_POST ["identificacion"];
-		cita::insertar ( $cod_cita, $cod_agendacita, $identificacion );
+	
+	case 27 :
+		$codigoPelicula = $_POST ["codigoPelicula"];
+		$codigoActor = $_POST ["codigoActor"];
+		peliculaActor::insertar ( $codigoPelicula, $codigoActor );
 		exit ();
-		
 		break;
-	case 84 :
-		$opc = $_REQUEST ["opc"];
+	
+	case 62 :
+		$opc = 13; // Caso: listar ubicacion
 		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
 		$valor = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
-		$procesocita = cita::listar ( $opc, $campo, $valor );
-		include ("../vista/listadocita.php");
+		$procesoubicacion = ubicacion::listar ( $opc, $campo, $valor );
+		include ("../vista/ingresoubicacion.php");
+		break;
+	case 63 :
+		$codigoPelicula = $_POST ["codigoPelicula"];
+		$nombre = $_POST ["nombre"];
+		$duracion = $_POST ["duracion"];
+		$fechaPublicacion = $_POST ["fechaPublicacion"];
+		$codigoUbicacion = $_POST ["codigoUbicacion"];
+		pelicula::insertar ( $codigoPelicula, $nombre, $duracion, $fechaPublicacion, $codigoUbicacion );
 		exit ();
 		break;
-	case 85 :
-		
-		break;
-	case 86 :
-		
-		break;
-	case 87 :
+	case 64 :
 		$opc = $_REQUEST ["opc"];
+		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
+		$valor = empty ( $_POST ["campo"] ) ? 0 : $_POST ["valor"];
+		$procesopelicula = pelicula::listar ( $opc, $campo, $valor );
+		include ("../Vista/listadopelicula.php");
+		exit ();
+		
+		break;
+	case 65 :
+		$opc = $_REQUEST ["opc"];
+		$codigoPelicula = $_POST ["codigoPelicula"];
+		$nombre = $_POST ["nombre"];
+		$duracion = $_POST ["duracion"];
+		$fechaPublicacion = $_POST ["fechaPublicacion"];
+		$codigoUbicacion = $_POST ["codigoUbicacion"];
+		pelicula::modificar ( $codigoPelicula, $nombre, $duracion, $fechaPublicacion, $codigoUbicacion );
+		exit ();
+		break;
+	case 66 :
+		$opc = 13;
+		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
+		$valor = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
+		$procesoubicacion = ubicacion::listar ( $opc, $campo, $valor );
+		
+		$opc = $_REQUEST ["opc"];
+		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
 		$valor = $_REQUEST ["valor"];
-		cita::eliminar ( $valor );
+		$procesopelicula = pelicula::listar ( $opc, $campo, $valor );
+		include ("../vista/modificarpelicula.php");
 		exit ();
 		
 		break;
-	case 88 :
+	case 67 :
 		$opc = $_REQUEST ["opc"];
 		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
-		$valor = empty ( $_POST ["valor"] ) ? 0 : $_POST ["valor"];
-		$procesocita = cita::listar ( $opc, $campo, $valor );
-		include ("../vista/listadocita.php");
+		$valor = empty ( $_POST ["campo"] ) ? 0 : $_POST ["valor"];
+		
+		$procesopelicula = pelicula::listar ( $opc, $campo, $valor );
+		include ("../vista/listadopelicula.php");
+		exit ();
+		
+		break;
+	case 68 :
+		$valor = $_REQUEST ["valor"];
+		pelicula::eliminar ( $valor );
 		exit ();
 		break;
 }
