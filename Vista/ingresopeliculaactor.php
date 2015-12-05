@@ -20,7 +20,7 @@
 <body>
 
 	<form id="form1" name="form1" method="post"
-		action="../control/procesos.php?opc=27">
+		action="../control/procesos.php?opc=26">
 		<table class="table table-striped">
 			<tr>
 				<td colspan="2" align="center"><h3>Peli-Actor</h3></td>

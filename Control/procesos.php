@@ -215,10 +215,11 @@ switch ($_REQUEST ["opc"]) {
 	case 27 :
 		$codigoPelicula = $_POST ["codigoPelicula"];
 		$codigoActor = $_POST ["codigoActor"];
-		peliculaActor::insertar ( $codigoPelicula, $codigoActor );
+		peliculaActor::insertar ($codigoPelicula,$codigoActor);
 		exit ();
 		break;
 	
+	//Pelicula	
 	case 62 :
 		$opc = 9; // Caso: listar ubicacion
 		$campo = empty ( $_POST ["campo"] ) ? 0 : $_POST ["campo"];
